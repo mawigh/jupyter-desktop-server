@@ -34,7 +34,6 @@ def setup_desktop():
         '-geometry', '1680x1050',
         '-SecurityTypes', 'UnixLogin',
         '-fg',
-        ':1',
     ]))
     return {
         'command': [
