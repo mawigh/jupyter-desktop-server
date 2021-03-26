@@ -32,7 +32,7 @@ def setup_desktop():
         '-verbose',
         '-xstartup', os.path.join(HERE, 'share/xstartup'),
         '-geometry', '1680x1050',
-        '-SecurityTypes', 'None',
+        '-SecurityTypes', 'UnixLogin',
         '-fg',
         ':1',
     ]))
