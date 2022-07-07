@@ -33,6 +33,7 @@ def setup_desktop():
         '-xstartup', os.path.join(HERE, 'share/xstartup'),
         '-geometry', '1680x1050',
         '-SecurityTypes', 'None',
+        '-rfbport', '{port}',
         '-fg',
     ]))
     return {
@@ -40,13 +41,13 @@ def setup_desktop():
             'websockify', '-v',
             '--web', os.path.join(HERE, 'share/web/noVNC-1.1.0'),
             '--heartbeat', '30',
-            '5901',
+            '{port}',
         ] + socket_args + [
             '--',
             '/bin/sh', '-c',
             f'cd {os.getcwd()} && {vnc_command}'
         ],
-        'port': 5901,
+        #'port': 5901,
         'timeout': 30,
         'mappath': {'/': '/vnc_lite.html'},
         'new_browser_window': True
